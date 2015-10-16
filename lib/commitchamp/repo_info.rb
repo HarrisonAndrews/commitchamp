@@ -14,7 +14,7 @@ module Commitchamp
   def repo_info(owner, repo)
     info = Repo_info.get("/repos/#{owner}/#{repo}/stats/contributors", :headers => auth)
 
-    #info['']
+    info['']
 
 
 binding.pry
