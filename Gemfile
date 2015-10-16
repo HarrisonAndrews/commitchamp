@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem "httparty"
+#gem "commitchamp"
 
 group :development do
   gem "pry"

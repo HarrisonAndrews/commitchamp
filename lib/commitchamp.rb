@@ -1,6 +1,7 @@
 require "httparty"
 require "pry"
 
+require "commithamp/repo_info"
 require "commitchamp/version"
 # Probably you also want to add a class for talking to github.
 
