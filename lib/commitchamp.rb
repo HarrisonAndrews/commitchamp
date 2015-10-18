@@ -1,6 +1,6 @@
 require "httparty"
 require "pry"
-
+require "commitchamp/github"
 require "commithamp/repo_info"
 require "commitchamp/version"
 # Probably you also want to add a class for talking to github.
@@ -8,7 +8,15 @@ require "commitchamp/version"
 module Commitchamp
   class App
     def initialize
+      puts "Welcome to commitchamp!"
     end
+
+
+
+
+
+
+
 
     def run
       # Your code goes here...
@@ -18,3 +26,4 @@ end
 
 app = Commitchamp::App.new
 app.run
+
