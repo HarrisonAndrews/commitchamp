@@ -19,7 +19,14 @@ require "pry"
 
 end
 
+    def get_repo(owner, repo)
+      Github.get("repos/#{owner}/#{repo}", headers: @headers)
 
+
+
+      # GET /repos/:owner/:repo
+
+    end
 
 
 

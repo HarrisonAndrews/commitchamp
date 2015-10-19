@@ -18,9 +18,9 @@ module Commitchamp
   def repo_info(owner, repo)
     info = Repo_info.get("/repos/#{owner}/#{repo}/stats/contributors", :headers => @auth)
     info.each do |contributor|
-    info_a = contributor["weeks"].map  {|x| x ["a"]}.sum
-    info_d = contributor["weeks"].map  {|x| x ["d"]}.sum
-    info_c = contributor["weeks"].map  {|x| x ["c"]}.sum
+    info_a = contributor["weeks"].map  {x ["a"]}.sum
+    info_d = contributor["weeks"].map  {x ["d"]}.sum
+    info_c = contributor["weeks"].map  {x ["c"]}.sum
 
     end
     puts "Number of Additons: #{info_a}"
