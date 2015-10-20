@@ -49,3 +49,35 @@ end
 app = Commitchamp::App.new
 app.run
 
+
+
+
+
+
+
+
+
+
+
+
+
+module Commitchamp
+  class Github
+    include HTTParty
+    base_uri" "https://api.github.com
+
+    def initialize
+      token = prompt("What is your auth token?")
+      @headers = {
+          'Authroization'  => "token #{token}"
+      "User_Agent"    =>  "HTTParty"
+
+      def get_contributors
+        Github.get("/repos/#{owner}/#{repo}/")
+      end
+
+      }
+    end
+  end
+end
+
