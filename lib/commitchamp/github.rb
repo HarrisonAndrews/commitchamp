@@ -1,34 +1,32 @@
-require "httparty"
-require "pry"
 
-  module Commitchamp
-    class Github
-      include HTTParty
-      base_uri "https://api.github.com"
+module Commitchamp
+  class Github
+    include HTTParty
+    base_uri "https://api.github.com"
 
     def initialize
-
-      token = promt"what is your auth token?"
+      token = prompt("What is your auth token?")
       @headers = {
-          "Authorization" => "token #{token}"
-          "User-Agent"    => "HTTParty"
+          "Authorization"     => "token #{token}",
+          "User-Agent"        => "HTTParty"
       }
     end
-
-    # def find_user(username)
-    #   Github.get("/users/#{username}", headers: @headers)
-    #
     # end
 
-    def get_contributors(owner, repo)
+    def get_contributors
+
+        owner = prompt "whose repository are you looking for?"
+
+        repo = prompt "which repository do you want?"
+
       Github.get("repos/#{owner}/#{repo}/stats/contributors", headers: @headers)
 
       # GET /repos/:owner/:repo
 
     end
 
-      def get_pretty_stats(owner, repo)
-        response  = self.get_contributors(owner, repo)
+      def get_pretty_stats
+        response  = self.get_contributors
         response.map {|contribution| extract_results(contribution)}
 
       end
